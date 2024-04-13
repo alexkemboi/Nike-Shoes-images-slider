@@ -36,7 +36,6 @@ header {
   
 
 /* Container Styles */
-/* Base Styles */
 .container {
   display: flex;
   justify-content: center;
@@ -53,33 +52,8 @@ header {
   height: 100%;
   padding: 10px;
   border: 10px;
-}
-
-/* Media Queries for Responsiveness */
-@media screen and (max-width: 768px) {
-  .container {
-    width: 90%; /* Adjust container width for smaller screens */
-    height: 60vh; /* Adjust container height for smaller screens */
-  }
   
-  .slider-container {
-    padding: 5px; /* Adjust padding for smaller screens */
-    border-width: 5px; /* Adjust border width for smaller screens */
-  }
 }
-
-@media screen and (max-width: 576px) {
-  .container {
-    width: 95%; /* Adjust container width for even smaller screens */
-    height: 50vh; /* Adjust container height for even smaller screens */
-  }
-  
-  .slider-container {
-    padding: 3px; /* Adjust padding for even smaller screens */
-    border-width: 3px; /* Adjust border width for even smaller screens */
-  }
-}
-
 
 .slider {
   display: flex;
