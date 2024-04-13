@@ -3,12 +3,14 @@
   const indicator = document.querySelector('.indicator');
 
 const images = [
+  { url: 'images/nike4.jpg', description: 'Nike Cortez (2023)' },
   { url: 'images/nike1.jpg', description: 'Nike Air Max 1 (2023)' },
   { url: 'images/nike5.jpg', description: 'Nike Waffle Trainer (2020)' },
   { url: 'images/nike2.jpg', description: 'Nike Air Jordan 1 (2024)' },
   { url: 'images/nike6.jpg', description: 'Nike Air Force 1 (2024)' },
   { url: 'images/nike4.jpg', description: 'Nike Cortez (2023)' },
   { url: 'images/nike5.jpg', description: 'Nike Waffle Trainer (2020)' },
+  { url: 'images/nike4.jpg', description: 'Nike Cortez (2023)' },
 ];
 
 let currentSlide = 0;

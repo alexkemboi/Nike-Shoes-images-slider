@@ -36,54 +36,64 @@ header {
   
 
 /* Container Styles */
-
 .container {
-    display: flex; /* Make the container a flex container */
-    justify-content: center; /* Center the slider container horizontally */
-    align-items: center; /* Center the slider container vertically */
-    width: 75%; /* Set width to 50% of the viewport */
-    height: 75vh; /* Set height to 50% of the viewport height */
-    position: relative;
-    margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: 75vh;
+  position: relative;
+  margin: auto;
+}
+
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border: 10px;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 90%;
+}
+
+.slider img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.5em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
   }
-  
-  .slider-container {
-    overflow: hidden; /* Hide overflowing content (useful for slider animation) */
-    width: 100%; /* Set width to 100% of the container */
-    height: 100%; /* Set height to 100% of the container */
-    padding: 10px;
-    border:10px;
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    width: 95%;
   }
-  
-  .slider {
-    display: flex;
-    width: 100%; /* Set width to 100% of the slider container */
-    height: 90%; /* Set height to 90% of the slider container */
-   
-  }
-  
-  .slider img {
-    display: block; /* Make images fill the slider width */
-    width: 100%; /* Set image width to 100% of the slider */
-    height: 100%; /* Set image height to 100% of the slider */
-    object-fit: cover; /* Crop images to fit while maintaining aspect ratio */
-  }
-  
- 
-  .prev, .next {
-    cursor: pointer; /* Set cursor to pointer on hover */
-    position: absolute; /* Position buttons absolutely within the slider container */
-    top: 50%; /* Center buttons vertically */
-    transform: translateY(-50%); /* Adjust vertical position if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    color: white; /* White text color */
-    font-size: 1.5em; /* Increase button font size */
-    padding: 10px 20px; /* Add padding to buttons */
-    border:30px;
-    border-radius: 5px; /* Add rounded corners */
-    opacity: 0.7; /* Set initial opacity */
-    transition: opacity 0.3s ease; /* Smooth opacity transition on hover */
-  }
+}
+
   
   .prev:hover, .next:hover {
     opacity: 1; /* Increase opacity on hover */
