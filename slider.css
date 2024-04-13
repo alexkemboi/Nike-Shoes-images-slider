@@ -44,6 +44,7 @@ header {
   height: 75vh;
   position: relative;
   margin: auto;
+  border-bottom: 20px;
 }
 
 .slider-container {
@@ -54,6 +55,63 @@ header {
   border: 10px;
   
 }
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 75%;
+  margin: auto;
+}
+
+.card,.cart-container {
+  width: calc(25% - 20px); /* 25% width for each card with 20px margin between them */
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  
+}
+
+/* Additional styles for card content */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.image-description {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.image-price {
+  font-size: 14px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.add-to-cart {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
+
 
 .slider {
   display: flex;
@@ -114,7 +172,7 @@ header {
 /* Center align indicator */
 .indicator {
     text-align: center;
-       margin-top: 10px;
+    margin-top: 30px;
     color: black;
 }
 
@@ -155,4 +213,8 @@ header {
         /* Set container width to 100% of the viewport width */
         width: 100%;
     }
+}
+h2{
+  text-align: center;
+  color: green;
 }

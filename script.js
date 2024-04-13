@@ -1,16 +1,17 @@
 
   const slider = document.querySelector('.slider');
   const indicator = document.querySelector('.indicator');
+  const cartdiv = document.querySelector('.cart');
+  const cartList = document.querySelector('.cart-list');
+  const cart = []; // Array to store items added to the cart
 
-const images = [
-  
-  { url: 'images/nike1.jpg', description: 'Nike Air Max 1 (2023)' },
-  { url: 'images/nike5.jpg', description: 'Nike Waffle Trainer (2020)' },
-  { url: 'images/nike2.jpg', description: 'Nike Air Jordan 1 (2024)' },
-  { url: 'images/nike6.jpg', description: 'Nike Air Force 1 (2024)' },  
-  { url: 'images/nike5.jpg', description: 'Nike Waffle Trainer (2020)' },
-  
-];
+  const images = [
+    { url: 'images/nike1.jpg', description: 'Nike Air Max 1 (2023)', price: 120 },
+    { url: 'images/nike5.jpg', description: 'Nike Waffle Trainer (2020)', price: 90 },
+    { url: 'images/nike2.jpg', description: 'Nike Air Jordan 1 (2024)', price: 150 },
+    { url: 'images/nike6.jpg', description: 'Nike Air Force 1 (2024)', price: 110 },
+    { url: 'images/nike5.jpg', description: 'Nike Waffle Trainer (2020)', price: 90 },
+  ];
 
 let currentSlide = 0;
 
@@ -80,3 +81,68 @@ function prevSlide() {
 setInterval(nextSlide, 5000); //Interval (in milliseconds) to adjust automatic slide timing
 
 
+// Function to create card elements
+function createCardElement(imageUrl, description, price) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+
+  const image = document.createElement('img');
+  image.src = imageUrl;
+  image.alt = description;
+
+  const imageDescription = document.createElement('div');
+  imageDescription.classList.add('image-description');
+  imageDescription.textContent = description;
+
+  const imagePrice = document.createElement('div');
+  imagePrice.classList.add('image-price');
+  imagePrice.textContent = `$${price}`;
+
+  const addToCartButton = document.createElement('button');
+  addToCartButton.textContent = 'Add to Cart';
+  addToCartButton.addEventListener('click', function() {
+    addToCart(description, price);
+  });
+
+  card.appendChild(image);
+  card.appendChild(imageDescription);
+  card.appendChild(imagePrice);
+  card.appendChild(addToCartButton);
+
+  return card;
+}
+function addToCart(description, price) {
+  cart.push({ description, price });
+  console.log('Item added to cart:', description);
+  console.log('Cart:', cart); 
+}
+
+images.forEach(image => {
+  const cardElement = createCardElement(image.url, image.description, image.price);
+  cartdiv.appendChild(cardElement);
+});
+// Function to add item to cart and update cart display
+function addToCart(description, price) {
+  // Add item to cart array
+  cart.push({ description, price });
+  
+  // Update cart display
+  updateCartDisplay();
+  
+  // Log item added to cart
+  console.log('Item added to cart:', description);
+  console.log('Cart:', cart); 
+}
+
+// Function to update cart display
+function updateCartDisplay() {
+  // Clear existing cart list
+  cartList.innerHTML = '';
+  
+  // Iterate over cart array and create list items for each item
+  cart.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${item.description} - $${item.price}`;
+    cartList.appendChild(listItem);
+  });
+}
