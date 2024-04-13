@@ -1,0 +1,146 @@
+/*  Nike image slider Styles */
+
+/* Apply Arial font to the entire document */
+body {
+    font-family: Arial, sans-serif;
+    /* Set background color to a shade of light blue */
+    background-color: white;
+}
+
+/* Header Styles */
+
+  
+header {
+    background-color: transparent; /* Light gray background */
+    padding: 20px;
+    text-align: center; /* Center the content horizontally */
+  }
+
+  /*Footer*/
+  footer {
+    background-color: transparent; /* Light gray background */
+    padding: 20px;
+    text-align: center;
+    bottom: 0px; /* Center the content horizontally */
+  }
+  
+  h1 {
+    font-size: 2em; /* Set the heading to be 2 times the default font size */
+    margin-bottom: 10px; /* Add some space below the heading */
+  }
+  
+  p {
+    font-style: italic; /* Add a slight italic style for a touch of elegance */
+    color: #666; /* Text color can be a darker shade of gray */
+  }
+  
+
+/* Container Styles */
+
+.container {
+    display: flex; /* Make the container a flex container */
+    justify-content: center; /* Center the slider container horizontally */
+    align-items: center; /* Center the slider container vertically */
+    width: 75%; /* Set width to 50% of the viewport */
+    height: 75vh; /* Set height to 50% of the viewport height */
+    position: relative;
+    margin: auto;
+  }
+  
+  .slider-container {
+    overflow: hidden; /* Hide overflowing content (useful for slider animation) */
+    width: 100%; /* Set width to 100% of the container */
+    height: 100%; /* Set height to 100% of the container */
+    padding: 10px;
+    border:10px;
+  }
+  
+  .slider {
+    display: flex;
+    width: 100%; /* Set width to 100% of the slider container */
+    height: 90%; /* Set height to 90% of the slider container */
+   
+  }
+  
+  .slider img {
+    display: block; /* Make images fill the slider width */
+    width: 100%; /* Set image width to 100% of the slider */
+    height: 100%; /* Set image height to 100% of the slider */
+    object-fit: cover; /* Crop images to fit while maintaining aspect ratio */
+  }
+  
+ 
+  .prev, .next {
+    cursor: pointer; /* Set cursor to pointer on hover */
+    position: absolute; /* Position buttons absolutely within the slider container */
+    top: 50%; /* Center buttons vertically */
+    transform: translateY(-50%); /* Adjust vertical position if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* White text color */
+    font-size: 1.5em; /* Increase button font size */
+    padding: 10px 20px; /* Add padding to buttons */
+    border:30px;
+    border-radius: 5px; /* Add rounded corners */
+    opacity: 0.7; /* Set initial opacity */
+    transition: opacity 0.3s ease; /* Smooth opacity transition on hover */
+  }
+  
+  .prev:hover, .next:hover {
+    opacity: 1; /* Increase opacity on hover */
+  }
+  
+  .prev {
+    left: 50px; 
+  }
+  
+  .next {
+    right: 50px;
+  }
+
+
+
+/* Center align indicator */
+.indicator {
+    text-align: center;
+       margin-top: 10px;
+    color: black;
+}
+
+
+
+/* Style indicator dots */
+.indicator span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    /* Set default background color of indicator dots */
+    background-color: #aaa;
+    /* Add border radius to indicator dots */
+    border-radius: 50%;
+    /* Add margin between indicator dots */
+    margin: 0 5px;
+    /* Set cursor to pointer on hover */
+    cursor: pointer;
+    /* Add transition effect to indicator dots */
+    transition: all 0.3s ease; 
+    text-align: center;
+    font-weight: bolder;
+}
+
+
+
+/* Style active indicator dot */
+.indicator span.active {
+    /* Change background color of active indicator dot */
+    background-color: #333;
+}
+
+
+
+/* Adjust container width for screens smaller than 768 pixels */
+@media screen and (max-width: 768px) {
+    .container {
+        /* Set container width to 100% of the viewport width */
+        width: 100%;
+    }
+}
